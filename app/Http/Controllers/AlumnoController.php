@@ -16,7 +16,7 @@ class AlumnoController extends Controller
     public function index()
     {
         //
-        $alumnos = alumno::all();
+        $alumnos = alumno::paginate(15);
         return view('alumno.index', compact('alumnos'));
     }
 
@@ -42,7 +42,7 @@ class AlumnoController extends Controller
         //
         Alumno::create($request->all());
 
-
+        return redirect('alumno');
     }
 
     /**
@@ -65,6 +65,8 @@ class AlumnoController extends Controller
     public function edit($id)
     {
         //
+        $alumno = Alumno::find($id);
+        return view('alumno.edit', compact('alumno', 'id'));
     }
 
     /**
@@ -77,6 +79,14 @@ class AlumnoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $alumno = alumno::find($id);
+        
+
+        $alumno->nombre = $request->get('nombre');
+        $alumno->codigo = $request->get('codigo');
+
+        $alumno->save();
+        return redirect('alumno');
     }
 
     /**
@@ -88,5 +98,7 @@ class AlumnoController extends Controller
     public function destroy($id)
     {
         //
+        alumno::find($id)->delete();
+        return http_redirect()->route('alumno.index')->with('success', 'Registro elimnado satisfactoriamente');
     }
 }
