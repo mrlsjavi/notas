@@ -69,3 +69,6 @@ Route::resource('punteo', 'PunteoController');
 
 
 Route::resource('alumno', 'AlumnoController');
+
+
+Route::get('pdf/impresion', 'PdfController@impresion');
