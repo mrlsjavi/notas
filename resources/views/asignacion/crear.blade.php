@@ -2,6 +2,32 @@
 
 @section('contenido')
 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+
+		$("#test").click(function(){
+			alert("presiono boton");
+		});
+
+		$("#slt_grado").change(function(){
+			if($("#slt_grado").val() != 0){
+				alert("no es 0");
+			}
+		});
+		
+	});
+	
+
+</script>
+
+
 <h4>asignacion de grado a Alumno</h4>
 
 <form method="POST" action="{{ route('asignacion.store') }}">
@@ -18,10 +44,11 @@
 	</p>
 
 	<p>
-	<label for="grado">Codigo
+	<label for="grado">Grado
 
 
-		<select name="grado">
+		<select name="grado" id="slt_grado">
+			<option value="0">Seleccione</option>
 			@foreach($grados as $grado)
 			 <option>{{$grado->nombre}}</option>
 			 @endforeach
@@ -39,9 +66,10 @@
 
 </form>
 
-<br/>
-<br/>
 
+<br/>
+<br/>
+<input type="button" name="" id="test" value="test">
 <div>
 	<ul>
 		@foreach($cursos as $curso)

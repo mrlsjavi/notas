@@ -76,3 +76,5 @@ Route::get('pdf/impresion', 'PdfController@impresion');
 Route::resource('curso', 'CursoController');
 Route::resource('grado', 'GradoController');
 Route::resource('asignacion', 'AsignacionController');
+
+Route::post('asignacion/cursos', 'AsignacionController@cursos');

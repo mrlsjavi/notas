@@ -93,4 +93,9 @@ class AsignacionController extends Controller
     {
         //
     }
+
+    public function cursos(){
+
+    	
+    }
 }
