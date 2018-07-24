@@ -19,8 +19,8 @@ class AsignacionController extends Controller
     public function index()
     {
         //
-        $Asignacion = Asignacion::paginate(15);
-        return view('asignacion.index', compact('Asignacion'));
+        $Asignaciones = Asignacion::paginate(15);
+        return view('asignacion.index', compact('Asignaciones'));
     }
 
     /**
