@@ -41,7 +41,7 @@ class AlumnoController extends Controller
     {
         //
         Alumno::create($request->all());
-
+        
         return redirect('alumno');
     }
 

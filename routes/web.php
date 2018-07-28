@@ -23,7 +23,7 @@ Route::get('test', function(){
 
 	$curso->save();
 
-	/*$ciclo = new \App\Ciclo;
+	$ciclo = new \App\Ciclo;
 	$ciclo->nombre = '2018';
 	
 
@@ -35,7 +35,7 @@ Route::get('test', function(){
 
 	$grado->save();
 
-	$asig = new \App\Asignacion;
+	/*$asig = new \App\Asignacion;
 	$asig->ciclo_id = 1;
 	$asig->grado_id = 1;
 	$asig->alumno_id = 1;
@@ -44,7 +44,7 @@ Route::get('test', function(){
 
 	$asig->save();*/
 
-	$punteo = new \App\Punteo;
+	/*$punteo = new \App\Punteo;
 	$punteo->nota1 = 20;
 	$punteo->nota2 = 20;
 	$punteo->nota3 = 20;
@@ -53,7 +53,7 @@ Route::get('test', function(){
 	$punteo->asignacion_id = 1;
 	
 
-	$punteo->save();
+	$punteo->save();*/
 
 	
 });
@@ -77,4 +77,6 @@ Route::resource('curso', 'CursoController');
 Route::resource('grado', 'GradoController');
 Route::resource('asignacion', 'AsignacionController');
 
-Route::post('asignacion/cursos', 'AsignacionController@cursos');
+Route::post('asignacion/getcursos', 'AsignacionController@getcursos');
+Route::get('asignacion/{asignacion}/assign', 'AsignacionController@create');
+Route::post('asignacion/guardar', 'AsignacionController@guardar');

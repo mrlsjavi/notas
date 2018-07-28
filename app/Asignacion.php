@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Asignacion extends Model
 {
     //
-
+    protected $fillable = [
+        'ciclo', 'grado', 'alumno',
+    ];
 
     public function ciclo(){
 
