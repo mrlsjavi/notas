@@ -17,8 +17,8 @@
 	<div>
 		
 			<h1>Centro Escolar Alegre Infancia</h1>
-			<h2>Javier Morales</h2>
-			<h3>Grado:</h3>&nbsp;<label>Kinder</label>&nbsp;&nbsp;<h3>Ciclo Escolar:</h3>&nbsp;<<label>2018</label>&nbsp;&nbsp;<h3>Codigo:</h3>&nbsp;<label>878-l</label>
+			<h2>{{$as->alumno->nombre}}</h2>
+			<h3>Grado:</h3>&nbsp;<label>{{$as->grado->nombre}}</label>&nbsp;&nbsp;<h3>Ciclo Escolar:</h3>&nbsp;<<label>{{$as->ciclo->nombre}}</label>&nbsp;&nbsp;<h3>Codigo:</h3>&nbsp;<label>{{$as->alumno->codigo}}</label>
 		
 	</div>
 
@@ -29,11 +29,11 @@
 	<thead>
 		<tr>
 			<th align="center">Area</th>
-			<th>I Bimestre</th>
-			<th>II Bimestre</th>
-			<th>III Bimestre</th>
-			<th>IV Bimestre</th>
-			<th>Nota Final</th>
+			<th align="center">I Bimestre</th>
+			<th align="center">II Bimestre</th>
+			<th align="center">III Bimestre</th>
+			<th align="center">IV Bimestre</th>
+			<th align="center">Nota Final</th>
 		</tr>
 		
 	</thead>
@@ -42,77 +42,28 @@
 		@foreach($cursos as $curso)
 		<tr>
 			<td align="center"><font color="blue">{{ $curso->curso->nombre}}</font></td>
-			<td>{{ $curso->nota1}}</td>
-			<td>{{ $curso->nota2}}</td>
-			<td>{{ $curso->nota3}}</td>
-			<td>{{ $curso->nota4}}</td>
-			<td></td>
+			<td align="center">@if ($curso->nota1 == 0) - @else {{$curso->nota1}} @endif</td>
+			<td align="center">@if ($curso->nota2 == 0) - @else {{$curso->nota2}} @endif</td>
+			<td align="center">@if ($curso->nota3 == 0) - @else {{$curso->nota3}} @endif</td>
+			<td align="center">@if ($curso->nota4 == 0) - @else {{$curso->nota4}} @endif</td>
+			<td align="center"></td>
 		</tr>
 
 		@endforeach
+		
 		<tr>
-			<td align="center"><font color="blue">clase4</font></td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td></td>
+			<td align="center"><font color="blue">Promedio Bimestral</font></td>
+			<td align="center">@if ($nota1 == 0) - @else {{$nota1}} @endif</td>
+			<td align="center">@if ($nota2 == 0) - @else {{$nota2}} @endif</td>
+			<td align="center">@if ($nota3 == 0) - @else {{$nota3}} @endif</td>
+			<td align="center">@if ($nota4 == 0) - @else {{$nota4}} @endif</td>
+			<td align="center"></td>
 			
 		</tr>
-		<tr>
-			<td align="center"><font color="blue">clase5</font></td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td></td>
-			
-		</tr>
-		<tr>
-			<td align="center"><font color="blue">clase6</font></td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td></td>
-			
-		</tr>
-		<tr>
-			<td align="center"><font color="blue">clase7</font></td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td></td>
-			
-		</tr>
-		<tr>
-			<td align="center"><font color="blue">Expresion Artistica/ Talleres Didacticos</font></td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td></td>
-			
-		</tr>
-		<tr>
-			<td align="center"><font color="blue">Medio Social y Natural</font></td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td></td>
-			
-		</tr>
-		<tr>
-			<td align="center"><font color="blue">promedio Bimestral</font></td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td>10</td>
-			<td></td>
-			
-		</tr>
+
+
+		
+		
 		
 
 	</tbody>

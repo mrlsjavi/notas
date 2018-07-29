@@ -8,6 +8,9 @@ use App\Ciclo;
 use App\Grado;
 use App\Curso;
 use App\alumno;
+use App\Pensum;
+use App\Punteo;
+use Illuminate\Support\Facades\DB;
 
 class AsignacionController extends Controller
 {
@@ -106,32 +109,32 @@ class AsignacionController extends Controller
     }
 
     public function guardar(Request $request){
-        
-        
-        //dd($request->ciclo);
-
-      //dd($request->all());
-     /*  $request->validate([
-        'alumno' => 'required',
-        'ciclo' => 'required|min:1',
-        'grado' => 'required'
-       ]);*/
-      /*Asignacion::create(
-        $request->all()
-      );*/
-      $as = new Asignacion;
-      $as->ciclo_id = $request->get('ciclo');
-      $as->grado_id = $request->get('grado');
-      $as->alumno_id = $request->get('alumno');
-      $as->save();
-
-      dd($as->id);
-      //tambien necesito ingresar los punteos
-      //buscar todos los cursos asociados a ese grado y guardarlos con punteo de 0
-      //select * from pensums where grado = al grado que traigo 
+       
+    $pensum = Pensum::where('grado_id', $request->get('grado'))->get();
       
+      // dd($cursos); 
+      DB::transaction(function() use($request){
+        $as = new Asignacion;
+          $as->ciclo_id = $request->get('ciclo');
+          $as->grado_id = $request->get('grado');
+          $as->alumno_id = $request->get('alumno');
+          $as->save();
 
-      // dd($i);
+          
+
+          collect(Pensum::where('grado_id', $request->get('grado'))->get())->map(function($p) use($as){
+            //dd($as->id);
+            //return $p->curso_id;
+                 $punteo = new Punteo;
+                 $punteo->curso_id = $p->curso_id;
+                 $punteo->asignacion_id = $as->id;
+                 $punteo->nota1 = 0;
+                 $punteo->nota2 = 0;
+                 $punteo->nota3 = 0;
+                 $punteo->nota4 = 0;
+                 $punteo->save();
+          });
+      });
         return redirect('alumno');
     }
 

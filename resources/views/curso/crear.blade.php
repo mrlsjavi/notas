@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('contenido')
-	<h3>Crear usuario</h3>
+	<h3>Crear Curso</h3>
 
 
 <form method="POST" action="{{ route('curso.store') }}">

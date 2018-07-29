@@ -10,7 +10,15 @@
 			<nav>
 				
 					
-					<a href="">Alumno</a>
+					
+					@if (auth()->check())
+						<a href="/logout">Cerrar Sesion de {{ auth()->user()->name }}</a>
+						<a href="">Alumno</a>
+					@endif
+					
+					@if(auth()->guest())
+						<a  href="/login">Login</a>
+					@endif
 				
 			</nav>
 
