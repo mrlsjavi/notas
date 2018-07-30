@@ -113,3 +113,7 @@ Route::get('teste', function(){
 
 	return $user;
 });
+
+Route::get('ausencia/{asignacion}/assign', 'AusenciaController@create');
+Route::post('ausencia/{asignacion}/save',  'AusenciaController@store');
+//Route::resource('ausencia', 'AusenciaController');

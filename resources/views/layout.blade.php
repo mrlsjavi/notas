@@ -14,6 +14,7 @@
 					@if (auth()->check())
 						<a href="/logout">Cerrar Sesion de {{ auth()->user()->name }}</a>
 						<a href="">Alumno</a>
+						<a href="">Ausencias</a>
 					@endif
 					
 					@if(auth()->guest())

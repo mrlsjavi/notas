@@ -52,7 +52,7 @@ class AsignacionController extends Controller
     public function store(Request $request, $id)
     {
         //
-        //dd($id);
+        dd($id);
 
         
     }

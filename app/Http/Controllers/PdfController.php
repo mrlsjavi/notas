@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Punteo;
 use App\Asignacion;
 use App\Curso;
+use App\Ausencia;
 
 class PdfController extends Controller
 {
@@ -25,7 +26,13 @@ class PdfController extends Controller
     	$as = Asignacion::find($id);
     	//dd($as->alumno->nombre);
 
-    	$pdf = PDF::loadView('pdf.notas', compact('cursos', 'id', 'nota1', 'nota2', 'nota3', 'nota4', 'as'))->setPaper('Letter', 'landscape');
+        $ausencia = Ausencia::where('asignacion_id', $id)->get();
+        $au = $ausencia->all();
+        $a = $au['0'];
+        //$a = $au->all();
+        //dd($a->ausencias);
+        //dd($au['Ausencia']);
+    	$pdf = PDF::loadView('pdf.notas', compact('cursos', 'id', 'nota1', 'nota2', 'nota3', 'nota4', 'as', 'a'))->setPaper('Letter', 'landscape');
     	return $pdf->download('notas.pdf');
     }
 }

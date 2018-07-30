@@ -24,6 +24,7 @@
 			<td>{{ $punteo->asignacion->grado->nombre}}</td>
 			<td>{{ $punteo->asignacion->ciclo->nombre}}</td>
 			<td><a href="{{ action('PunteoController@edit', $punteo['asignacion_id']) }}" class="btn btn-info btn-xs">Ingresar Notas</a></td>
+			<td><a href="{{ action('AusenciaController@create', $punteo['asignacion_id']) }}" class="btn btn-info btn-xs">Ingresar Ausencias</a></td>
 			<td><a href="{{ action('PdfController@impresion', $punteo['asignacion_id']) }}" class="btn btn-info btn-xs">Imprimir Tarjeta</a></td>
 		</tr>
 			@endforeach
