@@ -13,8 +13,10 @@
 					
 					@if (auth()->check())
 						<a href="/logout">Cerrar Sesion de {{ auth()->user()->name }}</a>
-						<a href="">Alumno</a>
-						<a href="">Ausencias</a>
+						<a href="/alumno">Alumno</a>
+						<a href="/alumno/create">Nuevo Alumno</a>
+						<a href="/punteo">Notas</a>
+						
 					@endif
 					
 					@if(auth()->guest())

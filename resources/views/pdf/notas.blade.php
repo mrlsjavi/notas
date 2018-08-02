@@ -29,11 +29,11 @@
 	<thead>
 		<tr>
 			<th align="center">Area</th>
-			<th align="center">I Bimestre</th>
-			<th align="center">II Bimestre</th>
-			<th align="center">III Bimestre</th>
-			<th align="center">IV Bimestre</th>
-			<th align="center">Nota Final</th>
+			<th align="center"> I Bimestre </th>
+			<th align="center"> II Bimestre </th>
+			<th align="center"> III Bimestre </th>
+			<th align="center"> IV Bimestre </th>
+			<th align="center"> Nota Final </th>
 		</tr>
 		
 	</thead>
@@ -41,23 +41,23 @@
 
 		@foreach($cursos as $curso)
 		<tr>
-			<td align="center"><font color="blue">{{ $curso->curso->nombre}}</font></td>
+			<td align="center"><font color="black">{{ $curso->curso->nombre}}</font></td>
 			<td align="center">@if ($curso->nota1 == 0) - @else {{$curso->nota1}} @endif</td>
 			<td align="center">@if ($curso->nota2 == 0) - @else {{$curso->nota2}} @endif</td>
 			<td align="center">@if ($curso->nota3 == 0) - @else {{$curso->nota3}} @endif</td>
 			<td align="center">@if ($curso->nota4 == 0) - @else {{$curso->nota4}} @endif</td>
-			<td align="center"></td>
+			<td align="center"> - </td>
 		</tr>
 
 		@endforeach
 		
 		<tr>
-			<td align="center"><font color="blue">Promedio Bimestral</font></td>
+			<td align="center"><font color="black"><b>Promedio Bimestral</b></font></td>
 			<td align="center">@if ($nota1 == 0) - @else {{$nota1}} @endif</td>
 			<td align="center">@if ($nota2 == 0) - @else {{$nota2}} @endif</td>
 			<td align="center">@if ($nota3 == 0) - @else {{$nota3}} @endif</td>
 			<td align="center">@if ($nota4 == 0) - @else {{$nota4}} @endif</td>
-			<td align="center"></td>
+			<td align="center"> - </td>
 			
 		</tr>
 
