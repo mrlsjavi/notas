@@ -1,11 +1,9 @@
 
-<!DOCTYPE html>
 
 
+	<meta http-equiv="Content-Type" content="text/html;" charset="utf-8">	
 
-
-
-<style type="text/css">
+	<style type="text/css">
 	h3, h4, h5 {display: inline;}
 	table{
 		border-collapse: collapse;
@@ -85,8 +83,15 @@
 <label style="position: absolute; bottom: 1cm;left:17cm;">Directora</label>
 
 
-<img src="logo.jpeg" style="position: absolute; top: 0; left: 0; width:20%; height:20%;">
+<img src="logo.jpeg" style="position: absolute; top: 0; left: 0; width:15%; height:15%;">
 
 
 </div>
+
+
+
+
+
+
+
 
