@@ -41,13 +41,35 @@ class AusenciaController extends Controller
     public function store(Request $request, $asignacion)
     {
         
-        $as = new Ausencia;
-          $as->ausencias = $request->get('ausencias');
-          $as->asignacion_id = $asignacion;
+        $as = Ausencia::where('asignacion_id', $asignacion)->get();
+        $j = $as->get('0');
+        $ausencia = Ausencia::find($j->id);
+        //dd($ausencia);
+
+
+          $ausencia->ausencias = $request->get('ausencias');
+          //$as->asignacion_id = $asignacion;
           
-          $as->save();
+          $ausencia->save();
 
           return redirect('punteo');
+
+
+          /*
+                $punteo_actualizado = Punteo::find($punteo_id);
+
+
+
+           $punteo_actualizado->curso_id = $id_curso;
+            $punteo_actualizado->asignacion_id = $asignacion_id;
+            $punteo_actualizado->nota1 = $request->get($i.'-nota1');
+            $punteo_actualizado->nota2 = $request->get($i.'-nota2');
+            $punteo_actualizado->nota3 = $request->get($i.'-nota3');
+            $punteo_actualizado->nota4 = $request->get($i.'-nota4');
+
+            $punteo_actualizado->save();
+
+          */
 
     }
 
