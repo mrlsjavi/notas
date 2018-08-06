@@ -106,9 +106,9 @@ Route::get('logout', 'Auth\LoginController@logout');
 
 Route::get('teste', function(){
 	$user = new App\User;
-	$user->name = 'Javier';
-	$user->email = 'mrlsjavi@gmail.com';
-	$user->password = bcrypt('atleta');
+	$user->name = 'AlegreInfancia';
+	$user->email = 'alegre_infancia@yahoo.com';
+	$user->password = bcrypt('Silvita14');
 	$user->save();
 
 	return $user;
