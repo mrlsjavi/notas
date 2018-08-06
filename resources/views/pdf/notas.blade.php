@@ -1,7 +1,7 @@
 
 
 
-	<meta http-equiv="Content-Type" content="text/html;" charset="utf-8">	
+	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">	
 
 	<style type="text/css">
 	h3, h4, h5 {display: inline;}
