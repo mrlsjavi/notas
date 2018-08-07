@@ -15,8 +15,8 @@
 	<div>
 		
 			<h1>Centro Escolar Alegre Infancia</h1>
-			<h2>{{utf8_decode($as->alumno->nombre)}}</h2>
-			<h3>Grado:</h3>&nbsp;<label>{{$as->grado->nombre}}</label>&nbsp;&nbsp;<h3>Ciclo Escolar:</h3>&nbsp;<<label>{{$as->ciclo->nombre}}</label>&nbsp;&nbsp;<h3>Codigo:</h3>&nbsp;<label>{{$as->alumno->codigo}}</label>
+			<h2>{{$as->alumno->nombre}}</h2>
+			<h3>Grado:</h3>&nbsp;<label>{{$as->grado->nombre}}</label>&nbsp;&nbsp;<h3>Ciclo Escolar:</h3>&nbsp;<label>{{$as->ciclo->nombre}}</label>&nbsp;&nbsp;<h3>Codigo:</h3>&nbsp;<label>{{$as->alumno->codigo}}</label>
 		
 	</div>
 
