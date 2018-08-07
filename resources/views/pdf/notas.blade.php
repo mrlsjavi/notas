@@ -72,8 +72,10 @@
 
 <br/>
 <br/>
-<div style="position: absolute; bottom: 5cm; left: 6cm; border-style: solid; border-top: solid; border-right: solid; border-left: solid; border-bottom: solid; width: 5cm; height: 1cm;" align="center">
-	<label style="font-weight: bold;">Ausencias:</label>&nbsp;<label>{{$a->ausencias}}</label>
+<br/>
+<br/>
+<div style="position: absolute; bottom: 4cm; left: 6cm; border-style: solid; border-top: solid; border-right: solid; border-left: solid; border-bottom: solid; width: 5cm; height: 1cm;" align="center">
+	<label style="font-weight: bold; vertical-align: middle;">Ausencias:</label>&nbsp;<label style="vertical-align: middle;">{{$a->ausencias}}</label>
 </div>
 
 <br/>
