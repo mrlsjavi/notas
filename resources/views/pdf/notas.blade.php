@@ -40,7 +40,7 @@
 
 		@foreach($cursos as $curso)
 		<tr>
-			<td align="center"><font color="black">{{ $curso->curso->nombre}}</font></td>
+			<td align="center" style="font-family: DejaVu Sans;"><font color="black">{{ $curso->curso->nombre}}</font></td>
 			<td align="center">@if ($curso->nota1 == 0) - @else {{$curso->nota1}} @endif</td>
 			<td align="center">@if ($curso->nota2 == 0) - @else {{$curso->nota2}} @endif</td>
 			<td align="center">@if ($curso->nota3 == 0) - @else {{$curso->nota3}} @endif</td>
