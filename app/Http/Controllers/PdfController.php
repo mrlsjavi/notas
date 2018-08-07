@@ -32,7 +32,7 @@ class PdfController extends Controller
         //$a = $au->all();
         //dd($a->ausencias);
         //dd($au['Ausencia']);
-    	$pdf = PDF::loadView('pdf.notas', compact('cursos', 'id', 'nota1', 'nota2', 'nota3', 'nota4', 'as', 'a'))->setPaper('Letter', 'landscape');
+    	$pdf =PDF::loadView('pdf.notas', compact('cursos', 'id', 'nota1', 'nota2', 'nota3', 'nota4', 'as', 'a'))->setPaper('Letter', 'landscape');
     	return $pdf->download('notas.pdf');
     }
 }
