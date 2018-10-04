@@ -45,7 +45,7 @@
 			<td align="center">@if ($curso->nota2 == 0) - @else {{$curso->nota2}} @endif</td>
 			<td align="center">@if ($curso->nota3 == 0) - @else {{$curso->nota3}} @endif</td>
 			<td align="center">@if ($curso->nota4 == 0) - @else {{$curso->nota4}} @endif</td>
-			<td align="center"> - </td>
+			<td align="center"> {{round((($curso->nota1 + $curso->nota2 + $curso->nota3 + $curso->nota4)/4), 0)}} </td>
 		</tr>
 
 		@endforeach
