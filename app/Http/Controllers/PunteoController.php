@@ -23,7 +23,7 @@ class PunteoController extends Controller
 
        return $asignacion->alumno->nombre;*/
        
-        $punteos = Punteo::select('asignacion_id')->groupBy('asignacion_id')->paginate(15);
+        $punteos = Punteo::select('asignacion_id')->groupBy('asignacion_id')->orderBy('asignacion_id', 'desc')->paginate(15);
       // $punteos = Punteo::groupBy('asignacion_id')->paginate(15);
         //dd($asignaciones);
         return view('punteo.index', compact('punteos'));

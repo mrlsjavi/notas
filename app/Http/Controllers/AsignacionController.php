@@ -10,6 +10,8 @@ use App\Curso;
 use App\alumno;
 use App\Pensum;
 use App\Punteo;
+use App\Ausencia;
+use App\Reporte;
 use Illuminate\Support\Facades\DB;
 
 class AsignacionController extends Controller
@@ -134,6 +136,18 @@ class AsignacionController extends Controller
                  $punteo->nota4 = 0;
                  $punteo->save();
           });
+
+          //ausencias y reportes
+          $aus = new Ausencia;
+          $aus->asignacion_id = $as->id;
+          $aus->ausencias = 0;
+          $aus->save();
+
+          $reporte = new Reporte;
+          $reporte->asignacion_id = $as->id;
+          $reporte->reportes = 0;
+          $reporte->save();
+
       });
         return redirect('alumno');
     }

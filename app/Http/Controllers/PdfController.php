@@ -9,6 +9,7 @@ use App\Punteo;
 use App\Asignacion;
 use App\Curso;
 use App\Ausencia;
+use App\Reporte;
 
 class PdfController extends Controller
 {
@@ -28,11 +29,24 @@ class PdfController extends Controller
 
         $ausencia = Ausencia::where('asignacion_id', $id)->get();
         $au = $ausencia->all();
-        $a = $au['0'];
+		$a = $au['0'];
+		//reporte solo si es primaria porque los antiguos no tienen reporte
+		if($as->grado->nombre == 'Primero'){
+			$reporte = Reporte::where('asignacion_id', $id)->get();
+        	$re = $reporte->all();
+			$r = $re['0'];
+
+			$conductas = Conductas::where('asignacion_id', $id)->get();
+			$pdf =PDF::loadView('pdf.primaria', compact('cursos', 'id', 'nota1', 'nota2', 'nota3', 'nota4', 'as', 'a', 'r', 'conductas'))->setPaper('Letter', 'landscape');
+    		return $pdf->download('notas.pdf');
+		}
+		else {
+			$pdf =PDF::loadView('pdf.notas', compact('cursos', 'id', 'nota1', 'nota2', 'nota3', 'nota4', 'as', 'a'))->setPaper('Letter', 'landscape');
+    		return $pdf->download('notas.pdf');
+		}
         //$a = $au->all();
         //dd($a->ausencias);
         //dd($au['Ausencia']);
-    	$pdf =PDF::loadView('pdf.notas', compact('cursos', 'id', 'nota1', 'nota2', 'nota3', 'nota4', 'as', 'a'))->setPaper('Letter', 'landscape');
-    	return $pdf->download('notas.pdf');
+    	
     }
 }
