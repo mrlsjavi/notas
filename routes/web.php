@@ -16,11 +16,11 @@ Route::get('/', function () {
 })->middleware('auth');
 
 Route::get('test', function(){
-	$Asuencias = new \App\Ausencia;
+	/*$Asuencias = new \App\Ausencia;
 	$Asuencias->asignacion_id =6;
 	$Asuencias->ausencias = 3;
 
-$Asuencias->save();
+$Asuencias->save();*/
 	/*$asig = new \App\Asignacion;
 	$asig->ciclo_id = 2;
 	$asig->grado_id = 2;
