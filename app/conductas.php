@@ -7,9 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class conductas extends Model
 {
     //
-    protected $fillable = [
-        'formativas','aignacion', 'ausencias',
-    ];
+    public function formativa(){
+
+    	return $this->belongsTo(formativas::class);
+    }
+
+    public function asignacion(){
+
+    	return $this->belongsTo(Asignacion::class);
+    }
 
     
 }

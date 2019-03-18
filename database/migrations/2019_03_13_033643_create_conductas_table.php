@@ -15,8 +15,8 @@ class CreateConductasTable extends Migration
     {
         Schema::create('conductas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('formativas_id');
-            $table->integer('aignacion_id');
+            $table->integer('formativa_id');
+            $table->integer('asignacion_id');
             $table->string('calificacion');
             $table->timestamps();
         });

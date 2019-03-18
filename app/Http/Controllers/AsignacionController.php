@@ -150,50 +150,50 @@ class AsignacionController extends Controller
           $reporte->save();
 
           $con = new conductas;
-          $con->formativas_id = 1;
-          $con->aignacion_id = $as->id;
+          $con->formativa_id = 1;
+          $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
           $con = new conductas;
-          $con->formativas_id = 2;
-          $con->aignacion_id = $as->id;
+          $con->formativa_id = 2;
+          $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
           $con = new conductas;
-          $con->formativas_id = 3;
-          $con->aignacion_id = $as->id;
+          $con->formativa_id = 3;
+          $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
           $con = new conductas;
-          $con->formativas_id = 4;
-          $con->aignacion_id = $as->id;
+          $con->formativasid = 4;
+          $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
           $con = new conductas;
-          $con->formativas_id = 5;
-          $con->aignacion_id = $as->id;
+          $con->formativa_id = 5;
+          $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
           $con = new conductas;
-          $con->formativas_id = 6;
-          $con->aignacion_id = $as->id;
+          $con->formativa_id = 6;
+          $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
           $con = new conductas;
-          $con->formativas_id = 7;
-          $con->aignacion_id = $as->id;
+          $con->formativa_id = 7;
+          $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
           $con = new conductas;
-          $con->formativas_id = 8;
-          $con->aignacion_id = $as->id;
+          $con->formativa_id = 8;
+          $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
