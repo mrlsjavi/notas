@@ -10,6 +10,7 @@ use App\Asignacion;
 use App\Curso;
 use App\Ausencia;
 use App\Reporte;
+use App\conductas;
 
 class PdfController extends Controller
 {
