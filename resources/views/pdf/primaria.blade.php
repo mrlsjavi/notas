@@ -81,7 +81,7 @@ table{
 <tbody>
 @foreach($conductas as $conducta)
 <tr>
-        <td align="center" style="font-family: DejaVu Sans;"><font color="black" size=2>{{$conducta}}</font></td>
+        <td align="center" style="font-family: DejaVu Sans;"><font color="black" size=2>{{$conducta->formativa->nombre}}</font></td>
         <td align="center"><font size=2>{{$conducta->calificacion}}</td>
     </tr>
 @endforeach
