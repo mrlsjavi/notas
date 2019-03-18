@@ -68,11 +68,11 @@ table{
 
 
 </table>
-<table  border="1" style="position: absolute; top: 13cm; left: 5cm;">
+<table  border="1" style="position: absolute; top: 13cm; left: 4cm;">
 <thead>
     <tr>
         <th align="center"><font size=2>Area Formativa</th>
-        <th align="center"><font size=2>Calififcacion</th>
+        <th align="center"><font size=2>Calificacion</th>
         
     </tr>
    
