@@ -8,7 +8,7 @@ class conductas extends Model
 {
     //
     protected $fillable = [
-        'formativas','asignacion', 'ausencias',
+        'formativas','aignacion', 'ausencias',
     ];
 
     

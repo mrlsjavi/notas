@@ -151,7 +151,7 @@ class AsignacionController extends Controller
 
           $con = new conductas;
           $con->formativas_id = 1;
-          $con->asignacion_id = $as->id;
+          $con->aignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
