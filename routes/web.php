@@ -25,63 +25,63 @@ $Asuencias->save();*/
 	$asig->ciclo_id = 2;
 	$asig->grado_id = 2;
 	$asig->alumno_id = 1;
-	$asig->save();
+	$asig->save();*/
 	
 	$pensum = new \App\Pensum;
-	$pensum->grado_id =2;
-	$pensum->curso_id = 1;
-	$pensum->save();
-
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =2;
-	$pensum->curso_id = 2;
-	$pensum->save();
-
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =2;
-	$pensum->curso_id = 3;
-	$pensum->save();
-
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =2;
-	$pensum->curso_id = 4;
-	$pensum->save();
-
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =2;
-	$pensum->curso_id = 5;
-	$pensum->save();
-
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =2;
-	$pensum->curso_id = 6;
-	$pensum->save();
-
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =2;
-	$pensum->curso_id = 7;
-	$pensum->save();
-
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =2;
-	$pensum->curso_id = 8;
-	$pensum->save();
-
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =2;
-	$pensum->curso_id = 9;
-	$pensum->save();
-
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =2;
+	$pensum->grado_id =5;
 	$pensum->curso_id = 10;
 	$pensum->save();
 
 	$pensum = new \App\Pensum;
-	$pensum->grado_id =2;
+	$pensum->grado_id =5;
 	$pensum->curso_id = 11;
-	$pensum->save();*/
-	$grado = new \App\Grado;
+	$pensum->save();
+
+	$pensum = new \App\Pensum;
+	$pensum->grado_id =5;
+	$pensum->curso_id = 12;
+	$pensum->save();
+
+	$pensum = new \App\Pensum;
+	$pensum->grado_id =5;
+	$pensum->curso_id = 13;
+	$pensum->save();
+
+	$pensum = new \App\Pensum;
+	$pensum->grado_id =5;
+	$pensum->curso_id = 14;
+	$pensum->save();
+
+	$pensum = new \App\Pensum;
+	$pensum->grado_id =5;
+	$pensum->curso_id = 15;
+	$pensum->save();
+
+	$pensum = new \App\Pensum;
+	$pensum->grado_id =5;
+	$pensum->curso_id = 5;
+	$pensum->save();
+
+	$pensum = new \App\Pensum;
+	$pensum->grado_id =5;
+	$pensum->curso_id = 16;
+	$pensum->save();
+
+	$pensum = new \App\Pensum;
+	$pensum->grado_id =5;
+	$pensum->curso_id = 6;
+	$pensum->save();
+
+	$pensum = new \App\Pensum;
+	$pensum->grado_id =5;
+	$pensum->curso_id = 17;
+	$pensum->save();
+
+	$pensum = new \App\Pensum;
+	$pensum->grado_id =5;
+	$pensum->curso_id = 18;
+	$pensum->save();
+	/*$grado = new \App\Grado;
 	$grado->nombre = 'Primero';
 	$grado->save();
 
@@ -180,7 +180,7 @@ $Asuencias->save();*/
 	$formativa = new \App\formativas;
 	$formativa->nombre = 'Lectura';
 	$formativa->orden =8;
-	$formativa->save();
+	$formativa->save();*/
 
 	/*$pensum = new \App\Pensum;
 	$pensum->grado_id =1;
