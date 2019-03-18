@@ -12,6 +12,7 @@ use App\Pensum;
 use App\Punteo;
 use App\Ausencia;
 use App\Reporte;
+use App\conductas;
 use Illuminate\Support\Facades\DB;
 
 class AsignacionController extends Controller
@@ -147,6 +148,14 @@ class AsignacionController extends Controller
           $reporte->asignacion_id = $as->id;
           $reporte->reportes = 0;
           $reporte->save();
+
+          $con = new conductas;
+          $con->formativas_id = 1;
+          $con->asignacion_id = $as->id;
+          $con->calificacion = "Excelente";
+          $con->save();
+
+
 
       });
         return redirect('alumno');
