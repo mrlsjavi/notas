@@ -3,7 +3,21 @@
 @section('contenido')
 
 <h1>Punteos</h1>
+<div style="float:right">
+</div>
+<div style="float:right">
 
+{!! Form::open(['route' => 'punteo.index', 'method' => 'GET', 'class' => 'navbar-form navbar-left pull-right']) !!}
+	<div class="form-group">
+	{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre de alumno']) !!}
+	{!! Form::select('type', $grados, null, ['class' => 'form-control']) !!}
+	{!! Form::select('ciclo', $ciclos, null, ['class' => 'form-control']) !!}
+	</div>
+	<button type="submit" class="btn btn-default">Buscar</button>
+{!! Form::close() !!}
+</div>
+<br/>
+<br/>
 <table class="table">
 	<thead>
 		<tr>
@@ -11,7 +25,9 @@
 			<th>Alumno</th>
 			<th>Grado</th>
 			<th>Ciclo</th>
-			<th>Accion</th>
+			<th>Notas</th>
+			<th>Ausencias</th>
+			<th>Reportes</th>
 			<th>Imprimir</th>
 		</tr>
 

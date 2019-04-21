@@ -4,24 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\alumno;
-
-class AlumnoController extends Controller
+class ConductaController extends Controller
 {
-
-    function __construct(){
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         //
-        $alumnos = alumno::name($request->get('name'))->paginate(15);
-        return view('alumno.index', compact('alumnos'));
     }
 
     /**
@@ -32,7 +24,6 @@ class AlumnoController extends Controller
     public function create()
     {
         //
-        return view('alumno.crear');
     }
 
     /**
@@ -44,9 +35,6 @@ class AlumnoController extends Controller
     public function store(Request $request)
     {
         //
-        Alumno::create($request->all());
-        
-        return redirect('alumno');
     }
 
     /**
@@ -69,8 +57,9 @@ class AlumnoController extends Controller
     public function edit($id)
     {
         //
-        $alumno = Alumno::find($id);
-        return view('alumno.edit', compact('alumno', 'id'));
+        $conductas = conductas::where('asignacion_id', $id)->get();
+        //dd($cursos);
+        return view('conducta.edit', compact('conductas', 'id'));
     }
 
     /**
@@ -83,14 +72,6 @@ class AlumnoController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $alumno = alumno::find($id);
-        
-
-        $alumno->nombre = $request->get('nombre');
-        $alumno->codigo = $request->get('codigo');
-
-        $alumno->save();
-        return redirect('alumno');
     }
 
     /**
@@ -102,7 +83,5 @@ class AlumnoController extends Controller
     public function destroy($id)
     {
         //
-        alumno::find($id)->delete();
-        return http_redirect()->route('alumno.index')->with('success', 'Registro elimnado satisfactoriamente');
     }
 }

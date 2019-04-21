@@ -16,6 +16,12 @@ Route::get('/', function () {
 })->middleware('auth');
 
 Route::get('test', function(){
+	
+	/*$user = new App\User;
+	$user->name = 'Javier';
+	$user->email = 'mrlsjavi@gmail.com';
+	$user->password = bcrypt('atleta');
+	$user->save();*/
 	/*$Asuencias = new \App\Ausencia;
 	$Asuencias->asignacion_id =6;
 	$Asuencias->ausencias = 3;
@@ -26,15 +32,15 @@ $Asuencias->save();*/
 	$asig->grado_id = 2;
 	$asig->alumno_id = 1;
 	$asig->save();*/
-	
+	/*
 	$pensum = new \App\Pensum;
 	$pensum->grado_id =5;
 	$pensum->curso_id = 10;
 	$pensum->save();
 
 	$pensum = new \App\Pensum;
-	$pensum->grado_id =5;
-	$pensum->curso_id = 11;
+	$pensum->grado_id =1;
+	$pensum->curso_id = 1;
 	$pensum->save();
 
 	$pensum = new \App\Pensum;
@@ -81,13 +87,14 @@ $Asuencias->save();*/
 	$pensum->grado_id =5;
 	$pensum->curso_id = 18;
 	$pensum->save();
-	/*$grado = new \App\Grado;
+	
+	$grado = new \App\Grado;
 	$grado->nombre = 'Primero';
 	$grado->save();
 
-
+*/
 	
-	$ciclo = new \App\Ciclo;
+/*	$ciclo = new \App\Ciclo;
 	$ciclo->nombre = '2019';
 	
 

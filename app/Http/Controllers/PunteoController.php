@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Punteo;
 use App\Asignacion;
 use App\Curso;
-
+use App\Grado;
+use App\Ciclo;
 class PunteoController extends Controller
 {
     /**
@@ -14,19 +15,37 @@ class PunteoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-
+//dd($request->get('name'));
        /* $punteo = Punteo::find(1);
         $asignacion = Asignacion::find(1);
 
        return $asignacion->alumno->nombre;*/
        
-        $punteos = Punteo::select('asignacion_id')->groupBy('asignacion_id')->orderBy('asignacion_id', 'desc')->paginate(15);
-      // $punteos = Punteo::groupBy('asignacion_id')->paginate(15);
+        $punteos = Punteo::select('asignacion_id')->groupBy('asignacion_id')->name($request->get('name'))->type($request->get('type'))->ciclo($request->get('ciclo'))->orderBy('asignacion_id', 'desc')->paginate(15);
+        //dd($punteos);
+        // $punteos = Punteo::groupBy('asignacion_id')->paginate(15);
         //dd($asignaciones);
-        return view('punteo.index', compact('punteos'));
+        $opciones = grado::all();
+        $grados  = [
+            "" => "Seleccione un grado",
+
+        ];
+        foreach ($opciones as $opcion){
+            $grados[$opcion->id] = $opcion->nombre;
+        }
+        
+        $opcionesCiclos = ciclo::all();
+        $ciclos  = [
+            "" => "Seleccione un ciclo",
+
+        ];
+        foreach ($opcionesCiclos as $ciclo){
+            $ciclos[$ciclo->id] = $ciclo->nombre;
+        }
+        return view('punteo.index', compact('punteos', 'grados', 'ciclos'));
     }
 
     /**

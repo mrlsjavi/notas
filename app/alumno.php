@@ -11,4 +11,14 @@ class alumno extends Model
     	'nombre',
     	'codigo'
     ];
+
+    public function scopeName($query, $name){
+       
+        if(trim($name) != ""){
+         $name = "%".$name."%";
+               
+         return $query->where('nombre', 'like', $name);
+        }
+             
+     }
 }
