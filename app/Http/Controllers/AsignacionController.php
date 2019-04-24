@@ -185,18 +185,6 @@ class AsignacionController extends Controller
           $con->calificacion = "Excelente";
           $con->save();
 
-          $con = new conductas;
-          $con->formativa_id = 7;
-          $con->asignacion_id = $as->id;
-          $con->calificacion = "Excelente";
-          $con->save();
-
-          $con = new conductas;
-          $con->formativa_id = 8;
-          $con->asignacion_id = $as->id;
-          $con->calificacion = "Excelente";
-          $con->save();
-
 
       });
         return redirect('alumno');
