@@ -11,7 +11,7 @@
 	<button type="submit" class="btn btn-primary">Buscar</button>
 {!! Form::close() !!}
 </div>
-
+<br/>
 <table class="table">
 	<thead>
 		<tr>
