@@ -68,7 +68,7 @@ table{
 
 
 </table>
-<table  border="1" style="position: absolute; top: 13cm; left: 4cm;">
+<table  border="1" style="position: absolute; top: 15cm; left: 4cm;">
 <thead>
     <tr>
         <th align="center"><font size=2>Area Formativa</th>
