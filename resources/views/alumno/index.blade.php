@@ -8,7 +8,7 @@
 	<div class="form-group">
 	{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre de alumno']) !!}
 	</div>
-	<button type="submit" class="btn btn-default">Buscar</button>
+	<button type="submit" class="btn btn-primary">Buscar</button>
 {!! Form::close() !!}
 </div>
 

@@ -13,7 +13,7 @@
 	{!! Form::select('type', $grados, null, ['class' => 'form-control']) !!}
 	{!! Form::select('ciclo', $ciclos, null, ['class' => 'form-control']) !!}
 	</div>
-	<button type="submit" class="btn btn-default">Buscar</button>
+	<button type="submit" class="btn btn-primary">Buscar</button>
 {!! Form::close() !!}
 </div>
 <br/>
