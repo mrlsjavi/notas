@@ -16,237 +16,500 @@ Route::get('/', function () {
 })->middleware('auth');
 
 Route::get('test', function(){
-	$curso = new \App\Curso;
-	$curso->nombre = 'Biblioteca';
-	$curso->orden = 19;
-	$curso->save();
-	$curso = new \App\Curso;
-	$curso->nombre = 'Lectura';
-	$curso->orden = 20;
-	$curso->save();
-	/*$user = new App\User;
-	$user->name = 'Javier';
-	$user->email = 'mrlsjavi@gmail.com';
-	$user->password = bcrypt('atleta');
-	$user->save();*/
-	/*$Asuencias = new \App\Ausencia;
-	$Asuencias->asignacion_id =6;
-	$Asuencias->ausencias = 3;
-
-$Asuencias->save();*/
-	/*$asig = new \App\Asignacion;
-	$asig->ciclo_id = 2;
-	$asig->grado_id = 2;
-	$asig->alumno_id = 1;
-	$asig->save();*/
-	/*
 	$pensum = new \App\Pensum;
 	$pensum->grado_id =5;
-	$pensum->curso_id = 10;
-	$pensum->save();
-
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =1;
-	$pensum->curso_id = 1;
+	$pensum->curso_id = 19;
 	$pensum->save();
 
 	$pensum = new \App\Pensum;
 	$pensum->grado_id =5;
-	$pensum->curso_id = 12;
+	$pensum->curso_id = 20;
 	$pensum->save();
 
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =5;
-	$pensum->curso_id = 13;
-	$pensum->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 42;
+	$punteo->save();
 
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =5;
-	$pensum->curso_id = 14;
-	$pensum->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 44;
+	$punteo->save();
 
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =5;
-	$pensum->curso_id = 15;
-	$pensum->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 47;
+	$punteo->save();
 
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =5;
-	$pensum->curso_id = 5;
-	$pensum->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 79;
+	$punteo->save();
 
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =5;
-	$pensum->curso_id = 16;
-	$pensum->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 80;
+	$punteo->save();
 
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =5;
-	$pensum->curso_id = 6;
-	$pensum->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 81;
+	$punteo->save();
 
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =5;
-	$pensum->curso_id = 17;
-	$pensum->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 82;
+	$punteo->save();
 
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =5;
-	$pensum->curso_id = 18;
-	$pensum->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 83;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 84;
+	$punteo->save();
 	
-	$grado = new \App\Grado;
-	$grado->nombre = 'Primero';
-	$grado->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 85;
+	$punteo->save();
 
-*/
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 86;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 87;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 88;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 123;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 124;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 125;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 126;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 127;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 128;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 129;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 130;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 131;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 132;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 133;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 134;
+	$punteo->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 135;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 19;
+	$punteo->asignacion_id = 136;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 42;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 44;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 47;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 79;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 80;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 81;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 82;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 83;
+	$punteo->save();
+
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 84;
+	$punteo->save();
 	
-/*	$ciclo = new \App\Ciclo;
-	$ciclo->nombre = '2019';
-	
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 85;
+	$punteo->save();
 
-	$ciclo->save();
-	$curso = new \App\Curso;
-	$curso->nombre = 'Comunicación y Lenguaje';
-	$curso->orden = 10;
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 86;
+	$punteo->save();
 
-	$curso->save();
-	$curso = new \App\Curso;
-	$curso->nombre = 'Matemática';
-	$curso->orden = 11;
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 87;
+	$punteo->save();
 
-	$curso->save();
-	$curso = new \App\Curso;
-	$curso->nombre = 'Medio Social';
-	$curso->orden = 12;;
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 88;
+	$punteo->save();
 
-	$curso->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 123;
+	$punteo->save();
 
-	$curso = new \App\Curso;
-	$curso->nombre = 'Medio Natural';
-	$curso->orden = 13;
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 124;
+	$punteo->save();
 
-	$curso->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 125;
+	$punteo->save();
 
-	$curso = new \App\Curso;
-	$curso->nombre = 'Expresión Artística';
-	$curso->orden = 14;
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 126;
+	$punteo->save();
 
-	$curso->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 127;
+	$punteo->save();
 
-	$curso = new \App\Curso;
-	$curso->nombre = 'Formación Cuidadana';
-	$curso->orden = 15;
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 128;
+	$punteo->save();
 
-	$curso->save();
-	$curso = new \App\Curso;
-	$curso->nombre = 'Pocoman';
-	$curso->orden = 16;
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 129;
+	$punteo->save();
 
-	$curso->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 130;
+	$punteo->save();
 
-	$curso = new \App\Curso;
-	$curso->nombre = 'Tics / Computación';
-	$curso->orden = 17;
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 131;
+	$punteo->save();
 
-	$curso->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 132;
+	$punteo->save();
 
-	$curso = new \App\Curso;
-	$curso->nombre = 'Caligrafía / Ortografia';
-	$curso->orden = 18;
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 133;
+	$punteo->save();
 
-	$curso->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 134;
+	$punteo->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 135;
+	$punteo->save();
 
-	$formativa = new \App\formativas;
-	$formativa->nombre = 'Higiene Personal';
-	$formativa->orden =1;
-	$formativa->save();
-	$formativa = new \App\formativas;
-	$formativa->nombre = 'Uniforme (diario y fisica)';
-	$formativa->orden =2;
-	$formativa->save();
+	$punteo = new \App\Punteo;
+	$punteo->nota1 = 0;
+	$punteo->nota2 = 0;
+	$punteo->nota3 = 0;
+	$punteo->nota4 = 0;
+	$punteo->curso_id = 20;
+	$punteo->asignacion_id = 136;
+	$punteo->save();
 
-	$formativa = new \App\formativas;
-	$formativa->nombre = 'Puntualidad al ingreso de clases';
-	$formativa->orden =3;
-	$formativa->save();
-
-	$formativa = new \App\formativas;
-	$formativa->nombre = 'Vocabulario apropidado';
-	$formativa->orden =4;
-	$formativa->save();
-
-	$formativa = new \App\formativas;
-	$formativa->nombre = 'Cumple con las normas del aula';
-	$formativa->orden =5;
-	$formativa->save();
-
-	$formativa = new \App\formativas;
-	$formativa->nombre = 'Demuestra valores';
-	$formativa->orden =6;
-	$formativa->save();
-
-	$formativa = new \App\formativas;
-	$formativa->nombre = 'Biblioteca';
-	$formativa->orden =7;
-	$formativa->save();
-
-	$formativa = new \App\formativas;
-	$formativa->nombre = 'Lectura';
-	$formativa->orden =8;
-	$formativa->save();*/
-
-	/*$pensum = new \App\Pensum;
-	$pensum->grado_id =1;
-	$pensum->curso_id = 1;
-	$pensum->save();
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =1;
-	$pensum->curso_id = 2;
-	$pensum->save();
-	$pensum = new \App\Pensum;
-	$pensum->grado_id =1;
-	$pensum->curso_id = 3;
-	$pensum->save();
-	$curso = new \App\Curso;
-	$curso->nombre = 'ingles';
-	$curso->orden = 5;
-
-	$curso->save();
-
-	$ciclo = new \App\Ciclo;
-	$ciclo->nombre = '2018';
-	
-
-	$ciclo->save();
-
-	grado = new \App\Grado;
-	$grado->nombre = 'Kinder';
-	
-
-	$grado->save();
-
-	$asig = new \App\Asignacion;
-	$asig->ciclo_id = 1;
-	$asig->grado_id = 1;
-	$asig->alumno_id = 1;
-
-	
-
-	$asig->save();*/
-
-	/*$punteo = new \App\Punteo;
-	$punteo->nota1 = 20;
-	$punteo->nota2 = 20;
-	$punteo->nota3 = 20;
-	$punteo->nota4 = 20;
-	$punteo->curso_id = 3;
-	$punteo->asignacion_id = 1;
-	
-
-	$punteo->save();*/
-
-	
 });
 
 
