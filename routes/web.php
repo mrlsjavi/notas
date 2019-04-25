@@ -19,9 +19,11 @@ Route::get('test', function(){
 	$curso = new \App\Curso;
 	$curso->nombre = 'Biblioteca';
 	$curso->orden = 19;
+	$curso->save();
 	$curso = new \App\Curso;
 	$curso->nombre = 'Lectura';
 	$curso->orden = 20;
+	$curso->save();
 	/*$user = new App\User;
 	$user->name = 'Javier';
 	$user->email = 'mrlsjavi@gmail.com';
