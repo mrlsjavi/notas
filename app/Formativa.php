@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class formativas extends Model
+class Formativa extends Model
 {
     //
     protected $fillable = [

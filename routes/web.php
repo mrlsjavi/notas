@@ -26,7 +26,7 @@ Route::get('test', function(){
 
 
 Route::resource('punteo', 'PunteoController');
-
+Route::resource('conducta','ConductaController');
  
 
 

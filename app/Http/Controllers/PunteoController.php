@@ -90,7 +90,7 @@ class PunteoController extends Controller
     {
         //
         $cursos = Punteo::where('asignacion_id', $id)->get();
-        //dd($cursos);
+        //($cursos);
         return view('punteo.edit', compact('cursos', 'id'));
     }
 

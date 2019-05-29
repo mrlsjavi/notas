@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Conducta;
 class ConductaController extends Controller
 {
     /**
@@ -57,9 +57,9 @@ class ConductaController extends Controller
     public function edit($id)
     {
         //
-        $conductas = conductas::where('asignacion_id', $id)->get();
+        $cursos = Conducta::where('asignacion_id', $id)->get();
         //dd($cursos);
-        return view('conducta.edit', compact('conductas', 'id'));
+        return view('conducta.edit', compact('cursos', 'id'));
     }
 
     /**

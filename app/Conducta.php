@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class conductas extends Model
+class Conducta extends Model
 {
     //
     public function formativa(){
 
-    	return $this->belongsTo(formativas::class);
+    	return $this->belongsTo(Formativa::class);
     }
 
     public function asignacion(){
