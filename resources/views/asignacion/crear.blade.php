@@ -27,7 +27,7 @@
 			var data = { id:$("#slt_grado").val() };
 			var data_jason = JSON.stringify(data);
 			enviar = {info: data_jason};
-			alert("ada");
+			//alert("ada");
 			$.ajax({
 				type:"POST",
 				data: enviar,

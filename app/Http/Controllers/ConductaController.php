@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Conducta;
+use App\Formativa;
 class ConductaController extends Controller
 {
     /**
@@ -72,6 +73,37 @@ class ConductaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        //dd($request->all());
+        $conductas = (count($request->all())-2)/2;
+        //dd($clases);
+
+        $curso = 0;
+        for($i =0; $i<$conductas; $i++){
+         $curso = Formativa::select('id')->where('nombre', $request->get('clase_'.$i))->get();
+ 
+           $c = $curso->get('0');
+           $id_curso = $c->id;
+           $asignacion_id = $id;
+ 
+           $punteo = Conducta::select('id')->where('formativa_id', $id_curso)->where('asignacion_id', $asignacion_id)->get();
+ 
+ 
+           $p = $punteo->get('0');
+           $punteo_id = $p->id;
+ 
+           $punteo_actualizado = Conducta::find($punteo_id);
+ 
+ 
+ 
+            $punteo_actualizado->formativa_id = $id_curso;
+             $punteo_actualizado->asignacion_id = $asignacion_id;
+             $punteo_actualizado->calificacion = $request->get($i.'-nota1');
+
+             $punteo_actualizado->save();
+ 
+        }
+
+        return redirect('punteo');
     }
 
     /**

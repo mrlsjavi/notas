@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('contenido')
-	<h3>editars</h3>
+	<h3>Editar Area Formativa</h3>
 	
 
 	<form method="post" action="{{action('ConductaController@update', $id)}}">
@@ -22,7 +22,7 @@
 
 	<label for="{{$cont}}-nota1">Calificacion
 
-	<input class="form-control" type="text" name="{{$cont}}-nota1" size="7" value="{{$curso->calificacion}}">
+	<input class="form-control" type="text" name="{{$cont}}-nota1" size="15" value="{{$curso->calificacion}}">
 	</label>
 	</p>
 	@else
@@ -35,7 +35,7 @@
 
 	<label for="{{$cont}}-nota1">
 
-	<input class="form-control" type="text" name="{{$cont}}-nota1" size="7" value="{{$curso->calificacion}}">
+	<input class="form-control" type="text" name="{{$cont}}-nota1" size="15" value="{{$curso->calificacion}}">
 	</label>
 	</p>
 
