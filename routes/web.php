@@ -31,7 +31,7 @@ Route::resource('conducta','ConductaController');
 
 
 Route::resource('alumno', 'AlumnoController');
-
+Route::resource('ciclo', 'CicloController');
 
 Route::get('pdf/{asignacion}/impresion', 'PdfController@impresion');
 
