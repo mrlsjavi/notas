@@ -27,6 +27,7 @@ class CicloController extends Controller
     public function create()
     {
         //
+        return view('ciclo.crear');
     }
 
     /**
@@ -38,6 +39,9 @@ class CicloController extends Controller
     public function store(Request $request)
     {
         //
+        Ciclo::create($request->all());
+        
+        return redirect('ciclo');
     }
 
     /**
@@ -60,6 +64,8 @@ class CicloController extends Controller
     public function edit($id)
     {
         //
+        $ciclo = Ciclo::find($id);
+        return view('ciclo.edit', compact('ciclo', 'id'));
     }
 
     /**
@@ -72,6 +78,13 @@ class CicloController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $ciclo = Ciclo::find($id);
+        
+
+        $ciclo->nombre = $request->get('nombre');
+
+        $ciclo->save();
+        return redirect('ciclo');
     }
 
     /**

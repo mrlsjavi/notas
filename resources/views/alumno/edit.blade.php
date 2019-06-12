@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('contenido')
-	<h3>editars</h3>
+	<h3>Editar Alumno</h3>
 	
 
 	<form method="post" action="{{action('AlumnoController@update', $id)}}">
