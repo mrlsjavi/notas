@@ -68,7 +68,16 @@ class AsignacionController extends Controller
      */
     public function show($id)
     {
-        //
+        // $punteos = Punteo::select('asignacion_id')->groupBy('asignacion_id')->name($request->get('name'))->type($request->get('type'))->ciclo($request->get('ciclo'))->orderBy('asignacion_id', 'desc')->paginate(15);
+       $cursos = Pensum::select('curso_id')->where('grado_id',$id)->get();
+       $array = array();
+       foreach($cursos as $c){
+            array_push($array, $c['curso_id']);
+           //return $c['curso_id'];
+       }
+       //return $array;
+       $curso = curso::whereIn('id', $array)->get();
+        return response()->json( $curso);
     }
 
     /**
@@ -106,9 +115,19 @@ class AsignacionController extends Controller
         //
     }
 
-    public function getcursos($request){
+    //
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getcursos(){
 
-    	return response()->json();
+        //return response()->json();
+        $cursos = curso::select('nombre')->get();
+       // dd($cursos);
+       //echo ("hola");
+       return response()->json(array('success'=>true, 'curos'=>$cursos));
     }
 
     public function guardar(Request $request){

@@ -18,6 +18,9 @@ class PensumController extends Controller
     public function index()
     {
         //
+        $pensums = Pensum::paginate(15);
+        //dd($pensums);
+        return view('pensum.index', compact('pensums'));
     }
 
     /**
@@ -56,7 +59,7 @@ class PensumController extends Controller
                
         });
     });
-        return redirect('alumno');
+        return redirect('pensum');
     }
 
     /**
@@ -68,6 +71,8 @@ class PensumController extends Controller
     public function show($id)
     {
         //
+        $pensums = Pensum::find($id);
+        return view('pensum.show', compact('pensums'));
     }
 
     /**
@@ -79,6 +84,7 @@ class PensumController extends Controller
     public function edit($id)
     {
         //
+        
     }
 
     /**

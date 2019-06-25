@@ -39,7 +39,7 @@ Route::resource('curso', 'CursoController');
 Route::resource('grado', 'GradoController');
 Route::resource('asignacion', 'AsignacionController');
 
-Route::post('asignacion/getcursos', 'AsignacionController@getcursos');
+Route::get('asignacion/getcursos', 'AsignacionController@getcursos');
 Route::get('asignacion/{asignacion}/assign', 'AsignacionController@create');
 Route::post('asignacion/guardar', 'AsignacionController@guardar');
 Route::resource('pensum', 'PensumController');
