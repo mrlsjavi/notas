@@ -12,7 +12,7 @@ use App\Pensum;
 use App\Punteo;
 use App\Ausencia;
 use App\Reporte;
-use App\conductas;
+use App\Conducta;
 use Illuminate\Support\Facades\DB;
 
 class AsignacionController extends Controller
@@ -168,37 +168,37 @@ class AsignacionController extends Controller
           $reporte->reportes = 0;
           $reporte->save();
 
-          $con = new conductas;
+          $con = new Conducta;
           $con->formativa_id = 1;
           $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
-          $con = new conductas;
+          $con = new Conducta;
           $con->formativa_id = 2;
           $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
-          $con = new conductas;
+          $con = new Conducta;
           $con->formativa_id = 3;
           $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
-          $con = new conductas;
+          $con = new Conducta;
           $con->formativa_id = 4;
           $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
-          $con = new conductas;
+          $con = new Conducta;
           $con->formativa_id = 5;
           $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
           $con->save();
 
-          $con = new conductas;
+          $con = new Conducta;
           $con->formativa_id = 6;
           $con->asignacion_id = $as->id;
           $con->calificacion = "Excelente";
