@@ -68,24 +68,23 @@ table{
 
 
 </table>
-<table  border="1" style="position: absolute; top: 14cm; left: 4cm;">
+<table  border="1" style="position: absolute; top: 15cm; left: 4cm;">
 <thead>
-    <tr>
-        <th align="center"><font size=2>Area Formativa</th>
-        <th align="center"><font size=2>Calificacion</th>
-        
-    </tr>
+   
    
     
 </thead>
 <tbody>
-@foreach($conductas as $conducta)
+
 <tr>
-        <td align="center" style="font-family: DejaVu Sans;"><font color="black" size=2>{{$conducta->formativa->nombre}}</font></td>
-        <td align="center"><font size=2>{{$conducta->calificacion}}</td>
-    </tr>
-@endforeach
-    
+        <td align="center" width="50">Ausencias<</td>
+        <td align="center"  width="25">{{$a->ausencias}}</td>
+        
+<tr>
+    <td align="center">Reportes</td>
+    <td align="center">{{$r->reportes}}</td>
+</tr>
+
 </tbody>
 </table>
 
@@ -93,10 +92,8 @@ table{
 <br/>
 <br/>
 <br/>
-<div style="position: absolute; bottom: 4cm; left: 17cm; border-style: solid; border-top: solid; border-right: solid; border-left: solid; border-bottom: solid; width: 5cm; height: 1cm;" align="center">
-<label style="font-weight: bold; vertical-align: middle;"><font size=1>Ausencias:</label>&nbsp;<label style="vertical-align: middle;"><font size=1>{{$a->ausencias}}</label>
-<label style="font-weight: bold; vertical-align: middle;"><font size=1>Reportes Disciplinarios:</label>&nbsp;<label style="vertical-align: middle;"><font size=1>{{$r->reportes}}</label>
-</div>
+<br/>
+<br/>
 
 <br/>
 <br/>
