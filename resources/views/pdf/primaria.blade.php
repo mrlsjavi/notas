@@ -68,7 +68,7 @@ table{
 
 
 </table>
-<table  border="1" style="position: absolute; top: 14cm; left: 4cm;">
+<table  border="1" style="position: absolute; top: 15cm; left: 4cm;">
 <thead>
    
    
@@ -88,8 +88,6 @@ table{
 </tbody>
 </table>
 
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
