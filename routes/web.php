@@ -27,8 +27,8 @@ Route::get('test', function(){
 
 Route::resource('punteo', 'PunteoController');
 Route::resource('conducta','ConductaController');
- 
-
+Route::resource('tipo', 'TipoController'); 
+Route::resource('metodo', 'MetodoController');
 
 Route::resource('alumno', 'AlumnoController');
 Route::resource('ciclo', 'CicloController');
@@ -53,6 +53,12 @@ Route::get('teste', function(){
 	$user->name = 'AlegreInfancia';
 	$user->email = 'alegre_infancia@yahoo.com';
 	$user->password = bcrypt('Silvita14');
+	$user->save();
+
+	$user = new App\User;
+	$user->name = 'javier';
+	$user->email = 'mrlsjavi@gmail.com';
+	$user->password = bcrypt('atleta');
 	$user->save();
 
 	return $user;

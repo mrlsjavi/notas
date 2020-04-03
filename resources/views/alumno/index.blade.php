@@ -31,6 +31,7 @@
 			<td>{{ $alumno->codigo}}</td>
 			<td><a href="{{ action('AlumnoController@edit', $alumno['id']) }}" class="btn btn-info btn-xs">Edit</a></td>
 			<td><a href="{{ action('AsignacionController@create', $alumno['id']) }}" class="btn btn-info btn-xs">Asignar</a></td>
+			<td><a href="{{ action('PagoController@create', $alumno['id']) }}" class="btn btn-info btn-xs">Pago</a></td>
 		</tr>
 			@endforeach
 
