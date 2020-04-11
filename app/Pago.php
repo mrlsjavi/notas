@@ -6,8 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pago extends Model
 {
+
     protected $fillable = [
-        'asignacion', 'tipo', 'metodo', 'aporte', 'fecha',
+        'asignacion', 
+        'tipo', 
+        'metodo', 
+        'aporte', 
+        'fecha',
     ];
 
     public function asignacion(){
@@ -24,5 +29,7 @@ class Pago extends Model
 
     	return $this->belongsTo(Metodo::class);
     }
+
+    
 
 }

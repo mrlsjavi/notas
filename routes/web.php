@@ -29,7 +29,7 @@ Route::resource('punteo', 'PunteoController');
 Route::resource('conducta','ConductaController');
 Route::resource('tipo', 'TipoController'); 
 Route::resource('metodo', 'MetodoController');
-
+Route::resource('pago', 'PagoController');
 Route::resource('alumno', 'AlumnoController');
 Route::resource('ciclo', 'CicloController');
 
