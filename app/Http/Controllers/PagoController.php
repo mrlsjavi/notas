@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pago;
+use App\Asignacion;
+use App\Tipo;
+use App\Metodo;
 
 class PagoController extends Controller
 {
@@ -25,7 +28,7 @@ class PagoController extends Controller
      */
     public function create()
     {
-        return view('pago.crear');
+        
     }
 
     /**
@@ -57,7 +60,10 @@ class PagoController extends Controller
      */
     public function show($id)
     {
-        //
+        $asignaciones = Asignacion::where('alumno_id',$id)->get();
+        $tipos = Tipo::all();
+        $metodos = Metodo::all();
+        return view('pago.crear', compact('asignaciones', 'tipos', 'metodos'));
     }
 
     /**
