@@ -15,7 +15,6 @@
 			<th>Metodo</th>
 			<th>Aporte</th>
 			<th>Fecha</th>
-			<th>Action</th>
 		</tr>
 
 	</thead>
@@ -30,9 +29,6 @@
 			<td>{{ $pago->metodo->nombre}}</td>
 			<td>{{ $pago->aporte}}</td>
 			<td>{{ $pago->fecha}}</td>
-			
-			
-			<td><a href="{{ action('PagoController@edit', $pago['id']) }}" class="btn btn-info btn-xs">Edit</a></td>
 		</tr>
 			@endforeach
 

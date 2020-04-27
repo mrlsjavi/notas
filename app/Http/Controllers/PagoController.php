@@ -7,6 +7,7 @@ use App\Pago;
 use App\Asignacion;
 use App\Tipo;
 use App\Metodo;
+use Illuminate\Support\Facades\Redirect;
 
 class PagoController extends Controller
 {
@@ -49,7 +50,8 @@ class PagoController extends Controller
         $pago->fecha = $request['fecha'];
         $pago->save();
         
-        return redirect('pago');
+        //return redirect::action('PagoController@show', $pago->id);
+        return redirect::route('pago.show',  $pago->asignacion->alumno->id);
     }
 
     /**
@@ -60,10 +62,9 @@ class PagoController extends Controller
      */
     public function show($id)
     {
-        $asignaciones = Asignacion::where('alumno_id',$id)->get();
-        $tipos = Tipo::all();
-        $metodos = Metodo::all();
-        return view('pago.crear', compact('asignaciones', 'tipos', 'metodos'));
+        $asignaciones = Asignacion::where('alumno_id', $id)->get();
+        $pagos = Pago::whereIn('asignacion_id',$asignaciones)->paginate(15);
+        return view('pago.index', compact('pagos'));
     }
 
     /**
@@ -74,7 +75,10 @@ class PagoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $asignaciones = Asignacion::where('alumno_id',$id)->get();
+        $tipos = Tipo::all();
+        $metodos = Metodo::all();
+        return view('pago.crear', compact('asignaciones', 'tipos', 'metodos'));
     }
 
     /**
