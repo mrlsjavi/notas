@@ -31,7 +31,7 @@
 	</p>
 
 	<p>
-		<label for="metodo">Tipo
+		<label for="metodo">Metodo
 			<select name="metodo">
 				@foreach($metodos as $metodo)
 				 <option value="{{ $metodo->id }}">{{ $metodo->nombre }}</option>

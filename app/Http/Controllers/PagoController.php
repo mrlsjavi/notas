@@ -60,11 +60,21 @@ class PagoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
-        $asignaciones = Asignacion::where('alumno_id', $id)->get();
-        $pagos = Pago::whereIn('asignacion_id',$asignaciones)->paginate(15);
-        return view('pago.index', compact('pagos'));
+        $asignaciones = Asignacion::select('id')->where('alumno_id', $id)->get();
+        $pagos = Pago::whereIn('asignacion_id',$asignaciones)->metodo($request->get('metodo'))->paginate(15);
+        //$pagos = Pago::whereIn('asignacion_id',$asignaciones)->where('metodo_id', '=', 3)->paginate(15);
+        //$pagos = Pago::whereIn('asignacion_id',$asignaciones)->where('metodo_id', '=', 3)->paginate(15);
+        $opcionesMetodo = Metodo::all();
+        $metodos  = [
+            "" => "Seleccione un Metodo",
+
+        ];
+        foreach ($opcionesMetodo as $opcion){
+            $metodos[$opcion->id] = $opcion->nombre;
+        }
+        return view('pago.index', compact('pagos', 'metodos'));
     }
 
     /**

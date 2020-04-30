@@ -30,6 +30,18 @@ class Pago extends Model
     	return $this->belongsTo(Metodo::class);
     }
 
+    public function scopeMetodo($query, $metodo){
+        if(trim($metodo) != ""){
+            //$type = "%".$type."%";
+            //$alumnos = alumno::select('id')->where('nombre', 'like', $type)->get();       
+            //$pagos = Asignacion::select('id')->where('ciclo_id', '=', $ciclo)->get();  
+            //dd($metodo);
+            $metodos = Metodo::select('id')->where('Id', $metodo)->get();
+            //$pagos = Pago::whereIn('asignacion_id',$asignaciones)->where('metodo_id', '=', $metodo)->paginate(15);
+            return $query->whereIn('metodo_id', $metodos);
+        }
+    }
+
     
 
 }

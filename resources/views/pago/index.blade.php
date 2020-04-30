@@ -3,7 +3,20 @@
 @section('contenido')
 
 <h4>Listado de Pagos</h4>
+</br>
+</br>
+<div style="float:right">
 
+{!! Form::open(['route' => array('pago.show', 1), 'method' => 'GET', 'class' => 'navbar-form navbar-left pull-right']) !!}
+	<div class="form-group">
+	{!! Form::select('metodo', $metodos, null, ['class' => 'form-control']) !!}
+	
+	</div>
+	<button type="submit" class="btn btn-primary">Buscar</button>
+{!! Form::close() !!}
+</div>
+<br/>
+<br/>
 <table class="table">
 	<thead>
 		<tr>
