@@ -10,6 +10,7 @@
 {!! Form::open(['route' => array('pago.show', 1), 'method' => 'GET', 'class' => 'navbar-form navbar-left pull-right']) !!}
 	<div class="form-group">
 	{!! Form::select('metodo', $metodos, null, ['class' => 'form-control']) !!}
+	{!! Form::select('tipo', $tipos, null, ['class' => 'form-control']) !!}
 	
 	</div>
 	<button type="submit" class="btn btn-primary">Buscar</button>

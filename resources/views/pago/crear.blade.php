@@ -51,7 +51,7 @@
 	<p>
 	<label for="fecha">Fecha
 
-	<input class="form-control" type="date" name="fecha">
+	<input class="form-control" type="date" name="fecha" value="{{date('Y-m-d')}}">
 	</label>
 	</p>
 

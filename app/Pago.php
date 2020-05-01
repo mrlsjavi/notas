@@ -42,6 +42,14 @@ class Pago extends Model
         }
     }
 
+    public function scopeTipo($query, $tipo){
+        if(trim($tipo) != ""){
+            $tipos = Ciclo::select('id')->where('Id', $tipo)->get();
+            //$pagos = Pago::whereIn('asignacion_id',$asignaciones)->where('metodo_id', '=', $metodo)->paginate(15);
+            return $query->whereIn('tipo_id', $tipos);
+        }
+    }
+
     
 
 }

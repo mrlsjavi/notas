@@ -63,7 +63,7 @@ class PagoController extends Controller
     public function show($id, Request $request)
     {
         $asignaciones = Asignacion::select('id')->where('alumno_id', $id)->get();
-        $pagos = Pago::whereIn('asignacion_id',$asignaciones)->metodo($request->get('metodo'))->paginate(15);
+        $pagos = Pago::whereIn('asignacion_id',$asignaciones)->metodo($request->get('metodo'))->tipo($request->get('tipo'))->orderBy('id', 'desc')->paginate(15);
         //$pagos = Pago::whereIn('asignacion_id',$asignaciones)->where('metodo_id', '=', 3)->paginate(15);
         //$pagos = Pago::whereIn('asignacion_id',$asignaciones)->where('metodo_id', '=', 3)->paginate(15);
         $opcionesMetodo = Metodo::all();
@@ -74,7 +74,17 @@ class PagoController extends Controller
         foreach ($opcionesMetodo as $opcion){
             $metodos[$opcion->id] = $opcion->nombre;
         }
-        return view('pago.index', compact('pagos', 'metodos'));
+
+        $opcionesTipo = Tipo::all();
+        $tipos  = [
+            "" => "Seleccione un tipo de pago",
+
+        ];
+        foreach ($opcionesTipo as $opcion){
+            $tipos[$opcion->id] = $opcion->nombre;
+        }
+
+        return view('pago.index', compact('pagos', 'metodos', 'tipos'));
     }
 
     /**
