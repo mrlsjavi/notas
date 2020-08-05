@@ -27,12 +27,12 @@ Route::get('test', function(){
 
 Route::resource('punteo', 'PunteoController');
 Route::resource('conducta','ConductaController');
- 
-
-
+Route::resource('tipo', 'TipoController'); 
+Route::resource('metodo', 'MetodoController');
+Route::resource('pago', 'PagoController');
 Route::resource('alumno', 'AlumnoController');
 Route::resource('ciclo', 'CicloController');
-
+Route::resource('user', 'UserController');
 Route::get('pdf/{asignacion}/impresion', 'PdfController@impresion');
 
 Route::resource('curso', 'CursoController');
@@ -55,6 +55,12 @@ Route::get('teste', function(){
 	$user->password = bcrypt('Silvita14');
 	$user->save();
 
+	$user = new App\User;
+	$user->name = 'javier';
+	$user->email = 'mrlsjavi@gmail.com';
+	$user->password = bcrypt('atleta');
+	$user->save();
+
 	return $user;
 });
 
@@ -62,4 +68,5 @@ Route::get('ausencia/{asignacion}/assign', 'AusenciaController@create');
 Route::post('ausencia/{asignacion}/save',  'AusenciaController@store');
 Route::get('reporte/{asignacion}/assign', 'ReporteController@create');
 Route::post('reporte/{asignacon}/save', 'ReporteController@store');
+
 //Route::resource('ausencia', 'AusenciaController');

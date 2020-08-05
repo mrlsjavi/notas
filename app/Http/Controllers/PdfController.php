@@ -10,13 +10,14 @@ use App\Asignacion;
 use App\Curso;
 use App\Ausencia;
 use App\Reporte;
-use App\conductas;
+use App\Conducta;
 
 class PdfController extends Controller
 {
     //
 
     public function impresion($id){
+		
     	//$id = 1;
     	$cursos = Punteo::where('asignacion_id', $id)->get();
     	$nota1 = round(Punteo::where('asignacion_id', $id)->avg('nota1'), 0);
@@ -36,8 +37,18 @@ class PdfController extends Controller
 			$reporte = Reporte::where('asignacion_id', $id)->get();
         	$re = $reporte->all();
 			$r = $re['0'];
-
-			$conductas = conductas::where('asignacion_id', $id)->get();
+			
+			$conductas = Conducta::where('asignacion_id', $id)->get();
+			$pdf =PDF::loadView('pdf.primaria', compact('cursos', 'id', 'nota1', 'nota2', 'nota3', 'nota4', 'as', 'a', 'r', 'conductas'))->setPaper('Letter', 'landscape');
+			//dd("kkega");
+			return $pdf->download('notas.pdf');
+		}
+		else if($as->grado->nombre == 'Segundo'){
+			$reporte = Reporte::where('asignacion_id', $id)->get();
+        	$re = $reporte->all();
+			$r = $re['0'];
+			//dd("kkega");
+			$conductas = Conducta::where('asignacion_id', $id)->get();
 			$pdf =PDF::loadView('pdf.primaria', compact('cursos', 'id', 'nota1', 'nota2', 'nota3', 'nota4', 'as', 'a', 'r', 'conductas'))->setPaper('Letter', 'landscape');
     		return $pdf->download('notas.pdf');
 		}
