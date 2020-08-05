@@ -17,6 +17,7 @@
 						<a href="/alumno/create">Nuevo Alumno</a>
 						<a href="/punteo">Notas</a>
 						<a href="/user">Usuarios</a>
+						<a href="/user/create">Nuevo Usuarios</a>
 						<!--<a href="/metodo">Metodo de pago</a>
 						<a href="/metodo/create">Metodo de Pago Nuevo</a>
 						<a href="/tipo">Tipo de pago</a>
