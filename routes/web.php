@@ -32,7 +32,7 @@ Route::resource('metodo', 'MetodoController');
 Route::resource('pago', 'PagoController');
 Route::resource('alumno', 'AlumnoController');
 Route::resource('ciclo', 'CicloController');
-
+Route::resource('user', 'UserController');
 Route::get('pdf/{asignacion}/impresion', 'PdfController@impresion');
 
 Route::resource('curso', 'CursoController');
@@ -68,4 +68,5 @@ Route::get('ausencia/{asignacion}/assign', 'AusenciaController@create');
 Route::post('ausencia/{asignacion}/save',  'AusenciaController@store');
 Route::get('reporte/{asignacion}/assign', 'ReporteController@create');
 Route::post('reporte/{asignacon}/save', 'ReporteController@store');
+
 //Route::resource('ausencia', 'AusenciaController');
