@@ -38,7 +38,7 @@ class AsignacionController extends Controller
     public function create($id)
     {
         //
-        $ciclos = ciclo::all();
+        $ciclos = ciclo::orderBy('id','Desc')->get();
         $grados = grado::all();
         $cursos = curso::all();
         $alumno = alumno::find($id);

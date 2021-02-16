@@ -95,7 +95,7 @@ class PagoController extends Controller
      */
     public function edit($id)
     {
-        $asignaciones = Asignacion::where('alumno_id',$id)->get();
+        $asignaciones = Asignacion::where('alumno_id',$id)->orderBy('id','Desc')->get();
         $tipos = Tipo::all();
         $metodos = Metodo::all();
         return view('pago.crear', compact('asignaciones', 'tipos', 'metodos'));
