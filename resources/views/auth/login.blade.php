@@ -5,7 +5,7 @@
 
 
 <form method="POST" action="/login">
-	{!! csrf_field() !!}
+	  @csrf
 	<input type="email" name="email" placeholder="email">
 	<input type="password" name="password" placeholder="password">
 
