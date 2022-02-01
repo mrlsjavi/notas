@@ -62,7 +62,8 @@ class CursoController extends Controller
      */
     public function edit($id)
     {
-        //
+         $curso = Curso::find($id);
+         return view('curso.edit', compact('curso', 'id'));
     }
 
     /**
@@ -75,6 +76,14 @@ class CursoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $curso = Curso::find($id);
+        
+
+        $curso->nombre = $request->get('nombre');
+        $curso->orden = $request->get('orden');
+
+        $curso->save();
+        return redirect('curso');
     }
 
     /**
