@@ -52,7 +52,16 @@ class PdfController extends Controller
 			$pdf =PDF::loadView('pdf.primaria', compact('cursos', 'id', 'nota1', 'nota2', 'nota3', 'nota4', 'as', 'a', 'r', 'conductas'))->setPaper('Letter', 'landscape');
     		return $pdf->download('notas.pdf');
 		}
-		else if($as->grado->nombre == 'Segundo'){
+		else if($as->grado->nombre == 'Terecero'){
+			$reporte = Reporte::where('asignacion_id', $id)->get();
+        	$re = $reporte->all();
+			$r = $re['0'];
+
+			$conductas = conductas::where('asignacion_id', $id)->get();
+			$pdf =PDF::loadView('pdf.primaria', compact('cursos', 'id', 'nota1', 'nota2', 'nota3', 'nota4', 'as', 'a', 'r', 'conductas'))->setPaper('Letter', 'landscape');
+    		return $pdf->download('notas.pdf');
+		}
+		else if($as->grado->nombre == 'Cuarto'){
 			$reporte = Reporte::where('asignacion_id', $id)->get();
         	$re = $reporte->all();
 			$r = $re['0'];
