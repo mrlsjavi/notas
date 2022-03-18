@@ -120,7 +120,7 @@ class PunteoController extends Controller
           //dd("id curso ".$id_curso);
           $punteo = Punteo::select('id')->where('curso_id', $id_curso)->where('asignacion_id', $asignacion_id)->get();
 
-         echo "<script>console.log('Debug Objects: " . "punteo arreglo" .$punteo "' );</script>";
+         echo "<script>console.log('Debug Objects: " . "punteo arreglo" .$punteo ."' );</script>";
           //echo($punteo);
           try{
              $p = $punteo->get('0');
