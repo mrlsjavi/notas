@@ -108,17 +108,19 @@ class PunteoController extends Controller
         $clases = (count($request->all())-2)/5;
         $curso = 0;
         //dd("clases ".$clases);
-
+ echo "<script>console.log('Debug Objects: " . "clasees hay ".$clases . "' );</script>";
        for($i =0; $i<$clases; $i++){
         $curso = Curso::select('id')->where('nombre', $request->get('clase_'.$i))->get();
 
           $c = $curso->get('0');
+
           $id_curso = $c->id;
+          echo "<script>console.log('Debug Objects: " . " curso id ".$id_curso  . "' );</script>";
           $asignacion_id = $id;
           //dd("id curso ".$id_curso);
           $punteo = Punteo::select('id')->where('curso_id', $id_curso)->where('asignacion_id', $asignacion_id)->get();
 
-         echo "<script>console.log('Debug Objects: " . "javier" . "' );</script>";
+         echo "<script>console.log('Debug Objects: " . "punteo arreglo" .$punteo "' );</script>";
           //echo($punteo);
           try{
              $p = $punteo->get('0');
