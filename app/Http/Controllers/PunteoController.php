@@ -107,13 +107,14 @@ class PunteoController extends Controller
 
         $clases = (count($request->all())-2)/5;
         $curso = 0;
+        Console::info("clases ".$clases);
        for($i =0; $i<$clases; $i++){
         $curso = Curso::select('id')->where('nombre', $request->get('clase_'.$i))->get();
 
           $c = $curso->get('0');
           $id_curso = $c->id;
           $asignacion_id = $id;
-
+          Console::info("id curso ".$id_curso);
           $punteo = Punteo::select('id')->where('curso_id', $id_curso)->where('asignacion_id', $asignacion_id)->get();
 
 
