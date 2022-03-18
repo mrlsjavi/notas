@@ -123,7 +123,7 @@ class PunteoController extends Controller
              $p = $punteo->get('0');
             $punteo_id = $p->id;
           }
-          catch(Exception ex){
+          catch(Exception $ex){
             dd($punteo);
           }
          
