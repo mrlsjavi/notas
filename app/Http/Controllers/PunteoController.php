@@ -119,7 +119,7 @@ class PunteoController extends Controller
           $punteo = Punteo::select('id')->where('curso_id', $id_curso)->where('asignacion_id', $asignacion_id)->get();
 
           //echo($punteo);
-          try(){
+          try{
              $p = $punteo->get('0');
             $punteo_id = $p->id;
           }
