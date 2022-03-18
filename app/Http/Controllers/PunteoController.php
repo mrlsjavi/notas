@@ -118,10 +118,15 @@ class PunteoController extends Controller
           //dd("id curso ".$id_curso);
           $punteo = Punteo::select('id')->where('curso_id', $id_curso)->where('asignacion_id', $asignacion_id)->get();
 
-          echo($punteo);
-
-          $p = $punteo->get('0');
-          $punteo_id = $p->id;
+          //echo($punteo);
+          try(){
+             $p = $punteo->get('0');
+            $punteo_id = $p->id;
+          }
+          catch(Exception ex){
+            dd($punteo);
+          }
+         
           //dd($punteo_id);
           $punteo_actualizado = Punteo::find($punteo_id);
 
